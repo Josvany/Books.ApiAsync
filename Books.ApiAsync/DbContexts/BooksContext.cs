@@ -26,7 +26,7 @@ namespace Books.ApiAsync.DbContexts
                 "Elroy"),
             new(Guid.Parse("2902b665-1190-4c70-9915-b9c2d7680450"),
                 "Douglas",
-                "Adams"));
+                "Adams"));  
 
             modelBuilder.Entity<Book>().HasData(
                new(Guid.Parse("5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"),
