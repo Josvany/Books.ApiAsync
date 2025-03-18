@@ -1,4 +1,5 @@
 using Books.ApiAsync.DbContexts;
+using Books.ApiAsync.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<BooksContext>(options =>
     options.UseSqlite(
         builder.Configuration["ConnectionStrings:BooksDBConnectionString"]));
+
+
+builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 
 
 var app = builder.Build();
